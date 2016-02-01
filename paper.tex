@@ -16,8 +16,7 @@
 \usepackage{tikz}
 \usetikzlibrary{positioning,arrows,shapes,fit}
 \usepackage{standalone}
-\usepackage{mdframed}
-\usepackage{capt-of}
+%\usepackage{mdframed}
 \usepackage{changepage}
 \usepackage{titlesec}
 \usepackage[parfill]{parskip}
@@ -70,17 +69,18 @@ an introductory programming curriculum as part of their first-year
 engineering course.
 
 Juxtaposed with the observation that technology is changing rapidly,
-and the half-life of technical skills is decreasing (cite half-life
-article) it would seem teaching programming is a questionable use of
-class time: the language and paradigm students are taught will likely
-not be the same they are asked to use in their first job
-post-graduation. However, if we acknowledge that learning to program
-is more than simply learning to write code, and in particular if we
-draw on work from the early era of computing which closely linked
-programming to problem solving and cognitive skills, we can argue that
-regardless of language or paradigm, learning to program may actually
-be a way to learn to problem solve, reason about and organize
-knowledge, and conceptualize processes.
+and the half-life of technical skills is
+decreasing\autocite{nae_educating_2004} it would seem teaching
+programming is a questionable use of class time: the language and
+paradigm students are taught will likely not be the same they are
+asked to use in their first job post-graduation. However, if we
+acknowledge that learning to program is more than simply learning to
+write code, and in particular if we draw on work from the early era of
+computing which closely linked programming to problem solving and
+cognitive skills, we can argue that regardless of language or
+paradigm, learning to program may actually be a way to learn to
+problem solve, reason about and organize knowledge, and conceptualize
+processes.
 
 While there are some recent studies which investigate programming
 education as a means of teaching problem-solving, there is also a
@@ -90,7 +90,9 @@ less important than centering programming education around
 problem-solving skills and if educators hope to achieve this goal then
 all aspects of introductory programming courses, from the course
 objectives, to the curriculum used, to the assessments administered,
-must be chosen intentionally with this goal in mind.
+must be chosen intentionally with this goal in mind. In this paper we
+will present a brief summary of current published work on introductory programming education, then note a potential lack that, 
+then offer a potential framework to 
 
 %We posit that as long as researchers focus on only one aspect of a
 %programming course, whether it be the language to use, the paradigm to
@@ -139,6 +141,8 @@ supporting any claim that OOP makes modeling problems any easier.
 % \autocite[][p.857]{soloway_learning_1986}
 
 \section{Methods}
+[identify learning sciences sources]
+
 Assuming that there would be more comprehensive research of
 introductory programming in the computer science community we began
 with targeted searchs of the ACM digital library for `introductory
@@ -168,14 +172,20 @@ the `cited by' list to find additional relevant papers.
 % emphasized.
 
 \section{Current state of research}
+%%TODO: add citations
 The bulk of literature about teaching introductory programming (CS1)
-revolves around what paradigms are “best” (e.g. procedural vs. object
-oriented), which language is “best”, often times with regard to a
+revolves around what paradigms are ``best'' (e.g. procedural vs. object
+oriented), which language is ``best'', often times with regard to a
 particular paradigm (e.g. OOP with Python vs. Java), and best teaching
 practices (e.g. use of “pair programming” environments). However, the
 \emph{reasons} for picking one paradigm over another tend to be about
 industry demand, rather than intentionally choosing a paradigm to
 support the learning objectives of the course.
+%% TODO: reminder to connect to learning science, e.g. this behavior
+%% is not uncommong, for instance flipped classrooms is a ``hot
+%% topic'' now and often times we see people implementing a ``flipped
+%% classroom'' without necessarily considering if that pedagogical
+%% approach makes the most sense for a given course.
 
 \section{Overall direction}
 A \citeyear{robins_learning_2003} study by
@@ -192,18 +202,21 @@ program by the end of their introductory programming courses, sparked
 much conversation and push to reform introductory programming in the
 next decade. Ten years after the
 \citeauthor{mccracken_multinational_2001} study,
-\textcite{lister_ten_2011} reflected on the response and lemented that
+\textcite{lister_ten_2011} reflected on the response and lamented that
 while much of the criticism that the problems used to test student
 knowledge were too difficult, no one had repeated the study with
-problems they deemed to be more reasonable. Thus while the
-\citeauthor{mccracken_multinational_2001} study validated the
-experiences of many introductory programming instructors it did not
-result in critical change to address the problems. Rather, what we
-have seen since the 1990s is been an increasing interest in where
-object oriented programming should be placed within the curriculum
-with debates between objects-first vs procedural-fist but little
-question of why object oriented design should be included at all other
-than it continues to be a popular paradigm in industry.
+problems they deemed to be more reasonable. 
+%% TODO: connect mccracken to engineering ed about missconceptions
+%% (CHEER chapter and Streveler paper)
+
+Thus while the \citeauthor{mccracken_multinational_2001} study
+validated the experiences of many introductory programming instructors
+it did not result in critical change to address the problems. Rather,
+what we have seen since the 1990s is been an increasing interest in
+where object oriented programming should be placed within the
+curriculum with debates between objects-first vs procedural-fist but
+little question of why object oriented design should be included at
+all other than it continues to be a popular paradigm in industry.
 
 Much fewer, but still some, authors have drawn on cognitive sciences
 to determine how indroductory programming courses should be
@@ -219,8 +232,8 @@ implementation of this goal is informed by cognitive science.
 \citeyear{pears_survey_2007-1} literature survey with the observation
 that despite the volume of work exploring the implementation of
 introductory programming courses “there is little systematic evidence
-to support any particular approach.”\autocite{pears_survey_2007-1} This
-could be due to two reasons:
+to support any particular approach.”\autocite{pears_survey_2007-1}
+We think this could be due to two reasons:
 
 \begin{enumerate}
 \item There has been a lack of consensus on what the goals of an
@@ -312,6 +325,9 @@ the object. Objects interact with one another by sending and receiving
 messages and systems of these objects are built to solve complex
 problems\autocite{kay_history_1996}.
 
+%%TODO: link to knowledge/skills interaction literature
+%%TODO: bring in knowledge organization, focus on concepts vs. procedures
+
 [section on what an ideal alignment would look like using OOP]
 
 \section{Language choice}
@@ -392,11 +408,13 @@ and the theory of worked examples, to design an introductory
 programming course\autocite{caspersen_instructional_2007-1}. It is
 interesting to note that they select these theories based on a human
 cognition model that resulted from computing: separate working and
-long term memory where learning is the process for transferming
+long term memory where learning is the process for transforming
 information from working to long-term memory. The course the authors
 describe teachs OOP but they never explain why the chose OOP as the
 paradigm, it is assumed that this is just a given feature of an
 introductory programming course.
+
+%%TODO: consider focusing on this and dropping threshold concepts and others. Potentally bring in pattern-based pedagogy
 
 \subsubsection{Threshold Concepts}
 
