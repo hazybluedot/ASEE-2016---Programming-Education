@@ -2,7 +2,7 @@
 
 % sorting=none will order citations in order of appearance
 % use sorting=nyt to sort by name, year, title
-\usepackage[numbers, backend=biber,autolang=hyphen, bibencoding=inputenc, strict, isbn=false, uniquename=false, sorting=none, sortcites=true, style=numeric, autocite=superscript, url=false]{biblatex} % biblatex setup
+\usepackage[backend=biber,autolang=hyphen, bibencoding=inputenc, isbn=false, uniquename=false, sorting=none, sortcites=true, style=numeric, autocite=superscript, url=false]{biblatex} % biblatex setup
 \DeclareLanguageMapping{american}{american-apa}
 \appto{\bibfont}{\footnotesize} % for 10pt bibliography
 %\usepackage{xunicode}
@@ -27,7 +27,7 @@
 \titleformat{\subsection}{\bfseries}{}{}{}[]
 
 \let\textcite=\autocite
-\addbibresource{../../computing.bib}
+\addbibresource{computing.bib}
 
 \title{\large \textbf{Leveraging Historical Ties between Cognitive Science and
   Computer Science to Guide Innovative Use of Computers in Education}}
