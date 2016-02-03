@@ -20,17 +20,18 @@
 \usepackage{changepage}
 \usepackage{titlesec}
 \usepackage[parfill]{parskip}
+\usepackage{mdframed}
 
 \titleformat*{\section}{\normalsize\bfseries} % Makes section titles 12 pt font
 \titleformat{\section}{\normalsize\bfseries}{}{}{}[]
 \titleformat{\subsection}{\bfseries}{}{}{}[]
 \titleformat{\subsubsection}{\bfseries}{}{}{}[]
 
-\let\textcite=\autocite
+%%\let\textcite=\autocite
 \addbibresource{computing.bib}
 
 \title{\large \textbf{Leveraging Historical Ties between Cognitive Science and
-  Computer Science to Guide Innovative Use of Computers in Education}}
+  Computer Science to Guide Programming Education}}
 
 % Author info isn't included for the Annual Conference but some regional conferences might request it.
 \author{}
@@ -45,6 +46,10 @@
 \patchcmd{\@maketitle}{\end{center}}{\end{center}\end{adjustwidth}}{}{}
 \makeatother
 
+%% TODO: be more explicit about learning framework
+
+%% TODO: bring in formative assessment
+
 \begin{document}
 \raggedright
 \maketitle
@@ -52,9 +57,9 @@
 \pagestyle{empty}
 
 % conflict between teaching programming syntax, teaching ``how to program'', teaching high-level concepts like abstractions and how to ``do'' problem solving.
-\section{Coding for Everyone}
+\section{Coding for everyone}
 In the past few years, there has been increasing interest to get more
-people, regardless of background, to learn to program. In fact
+people, regardless of background, to learn to program. In fact,
 President Obama recently made a statement calling on all children to
 have the opportunity to learn about computer
 science\autocite{whitehouse_computer_2016}. Sites such as code.org
@@ -66,13 +71,16 @@ for non-computer-science majors, or have been expanding programming to
 non-majors\autocite{rich_cs1_2004,forte_motivation_2005,guzdial_design_2005}. At
 the authors of this paper's institution, all first year general
 engineering students are required to complete an introductory
-programming module as part of their first-year engineering course.
+programming module as part of their first-year engineering course, and
+in general ``basic programming skills'' is a common desired outcome
+across engineering
+curricula\autocite{reid_classification_2014}.
 
-Juxtaposed with the observation that technology is changing rapidly,
-and the half-life of technical skills is
-decreasing\autocite{nae_educating_2004}, it would seem that teaching
-programming is a questionable use of class time: the language and
-paradigm students are taught will likely not be the same they are
+This coding-for-all paradigm juxtaposed with the observation that
+technology is changing rapidly, and the half-life of technical skills
+is decreasing\autocite{nae_educating_2004}, it would seem that
+teaching programming is a questionable use of class time: the language
+and paradigm students are taught will likely not be the same they are
 asked to use in their first job post-graduation. However, if we
 acknowledge that learning to program is more than simply learning to
 write code, and in particular if we draw on work from the early era of
@@ -80,6 +88,21 @@ computing which closely linked programming to problem solving and
 cognitive skills, we can argue that regardless of language or
 paradigm, learning to program may actually be a way to learn to
 problem solve, organize knowledge, and conceptualize processes.
+
+At the dawn of the computing revolution, visionaries predicted that
+computers had the potential to ``augment the human intellect''
+\autocite{engelbart_augmenting_1962}, a much more expansive view than
+simply becoming tools to automate tedious calculations. What was meant
+by this was that computing allows for new ways of dealing with
+complexity, provides new metaphors for thinking about
+systems\autocite{kay_history_1996}. Early work demonstrated that with
+the aid of computers, children could engage with tasks and concepts
+that had previously been considered ``advanced'', and through
+interacting with computers, children could become more aware of their
+own cognitive processes \autocite{papert_mindstorms_1980}. Thus, the
+fact that specific technologies may be obsolete by the time students
+graduate may be beside the point, there are lasting cognitive benefits
+learning to interact with a computer.
 
 While there are some recent studies which investigate programming
 education as a means of teaching problem-solving, there is also a
@@ -93,36 +116,11 @@ assessments administered, must be chosen intentionally with this goal
 in mind. 
 
 In this paper we will present a brief summary of current published
-work on introductory programming education. We will note that much of
-the current work lacks a tight integration of course objectives,
-pedagogical strategies, and assessments, and will offer a potential
-framework to help think about both the design and evaluation of
-introductory programming courses.
-
-%We posit that as long as researchers focus on only one aspect of a
-%programming course, whether it be the language to use, the paradigm to
-%teach, the assessment method to use, etc., there will continue to be a
-%lack of con consensus of what approach is best, just as
-%\textcite{pears_survey_2007-1} observed.
-
-\section{Historic Ties Between Cognitive Science and Computer Science}
-At the dawn of the computing revolution, visionaries predicted that
-computers had the potential to “augment the human intellect”
-\autocite{engelbart_augmenting_1962}, a much more expansive view than
-simply becoming tools to automate tedious calculations. What was meant
-by this was that computing allows for new ways of dealing with
-complexity, provides new metaphors for thinking about
-systems\autocite{kay_history_1996}. Early work demonstrated that with
-the aid of computers, children could engage with tasks and concepts
-that had previously been considered “advanced”, and through
-interacting with computers, children could become more aware of their
-own cognitive processes \autocite{papert_mindstorms_1980}. However,
-\textcite{east_patternbased_1996} note that as of 1996 little work had
-been done to inform instruction from knowledge of learning. The rise
-in popularity of object-oriented programming seems to dominate the
-conversation for the next few years, though
-\textcite{robins_learning_2003} observes there is a lack of evidence
-supporting any claim that OOP makes modeling problems any easier.
+work on introductory programming education. In particular we will
+explore the alignment of course objectives, pedagogical strategies,
+and assessments, and will offer a potential framework to help think
+about both the design and evaluation of introductory programming
+courses.
 
 %“Computing enters as a new representation system with new and useful
 %metaphors for dealing with complexity, especially of systems”
@@ -156,15 +154,19 @@ or a survey of practices
 \autocite[e.g.][]{pears_survey_2007-1,robins_learning_2003} we used
 the `cited by' list to find additional relevant papers.
 
-We needed a framework to consistently evaluate and starting from
+Because the literature search of introductory programming seemed to be
+interest in why and how programming was taught, we needed a documented
+framework to consistently evaluate and starting from
 \citeauthor{jamieson_creating_2009}'s
 (\citeyear{jamieson_creating_2009}) to ground educational research
 activities in how people learn we identified the concept of
-\empha{constructive alignment} as a promising one. Following the
+\emph{constructive alignment} as a promising one. Following the
 references in \citeauthor{jamieson_creating_2009}'s report as well as
 conducting targeted literature searches for ``constructive alignment''
 we were able to find descriptions of this
 framework\autocite{jamieson_creating_2009,pellegrino_rethinking_2006,felder_designing_2003,biggs_enhancing_1996}.
+%% TODO: mention that we chose the framework after analyzing the above
+%% citations, i.e. it wasn't a direct pull from jamieson
 
 %% Despite hope in the 1990s that computing and programming had potential
 %% for bringing more undrerepresented groups into STEM fields, it has
@@ -213,17 +215,14 @@ concepts'' are, the types of problems assigned, and methods of
 assessment, the incorporation of OOP will likely create confusion for
 students and frustration for instructor\autocite{kolling_problem_1999}.
 
-%% TODO: reminder to connect to learning science, e.g. this behavior
-%% is not uncommong, for instance flipped classrooms is a ``hot
-%% topic'' now and often times we see people implementing a ``flipped
-%% classroom'' without necessarily considering if that pedagogical
-%% approach makes the most sense for a given course.
-
-\section{Overall direction}
+%% TODO: more directed title
+%% TODO: possibly use subheadings to ``tweet'' the major takeaways from each section,
+%% this could then be connected at the end to bullet points of suggestions
+\section{Trends in programming education research}
 A \citeyear{robins_learning_2003} study by
 \citeauthor{robins_learning_2003} identifies four trends in research
-into programming education: 1) distinguishing between novice and
-expert programmers with emphasis on deficiencies of novices, 2) the
+of programming education: 1) distinguishing between novice and expert
+programmers with emphasis on deficiencies of novices, 2) the
 distinction between knowledge and strategies, 3) the distinction
 between program comprehension and generation, and 4) a comparison of
 OOP to procedural styles of
@@ -232,22 +231,22 @@ biggest challenge for novice programmers was not understanding the
 basic concepts, but knowing how to apply them. This finding is
 consistent understanding of how we
 learn\autocite{bransford_how_2000,ambrose_chapter_2010}, and with
-studies of expert/novice behavior in other domains, such a
+studies of expert/novice behavior in other domains, such as
 statics\autocite{litzinger_cognitive_2010}. In both cases the
 suggestion is that helping students learn strategies that work is
 crucial to helping them become effective novices, i.e. devote
 instructional time to problem-solving strategies and how to apply
 them.
 
-The \citeyear{mccracken_multinational_2001}
-\citeauthor{mccracken_multinational_2001}
-study\autocite{mccracken_multinational_2001}, which concluded that
-regardless of nation or institution, most students do not know how to
-program by the end of their introductory programming courses, sparked
-much conversation and push to reform introductory programming in the
-next decade. This phenomenon is by no means exclusive to introductory
-programming: disconnect between what we think we are teaching and what
-students learn has been observed across
+A \citeyear{mccracken_multinational_2001} study by
+\citeauthor{mccracken_multinational_2001}\autocite{mccracken_multinational_2001},
+which concluded that regardless of nation or institution, most
+students do not know how to program by the end of their introductory
+programming courses, sparked much conversation and push to reform
+introductory programming in the next decade. This phenomenon is by no
+means exclusive to introductory programming: disconnect between what
+we think we are teaching and what students learn has been observed
+across
 engineering\autocite{streveler_learning_2008,flynn_engineering_2014}. Possible
 ways of addressing this disconnect include recognizing differences in
 student's prior knowledge, helping students see connections between
@@ -265,19 +264,19 @@ with debates between objects-first vs procedural-fist but little
 question of why object oriented design should be included at all other
 than it continues to be a popular paradigm in industry.
 
-Much fewer, but still some, authors have drawn on cognitive sciences
-to determine how indroductory programming courses should be
-taught. \textcite{muller_pattern_2005} propose a pattern oriented
-approach that places emphasis on recognizing and learning to work with
-algorithmic patterns over syntax and design paradigms. This approach
-closely aligns with understanding of differences in expert/novice
-behavior by helping students identify patterns of solutions and
-learning how and when to apply them to particular problems.
-
 There remains a desire that introductory programming courses should
 teach problem-solving skills, though only a few papers present
 evidence that the implementation of this goal is informed by cognitive
-science\autocite{kramarski_cognitivemetacognitive_1997,reed_incorporating_1998,muller_supporting_2008}.
+science\autocite{kramarski_cognitivemetacognitive_1997,reed_incorporating_1998,muller_supporting_2008}. One
+thread in particular has received regular attention:
+\citeauthor{east_patternbased_1996} propose a pattern-based approach
+that places emphasis on recognizing and learning to work with
+algorithmic patterns over syntax and design
+paradigms\autocite{east_patternbased_1996}. This approach closely
+aligns with understanding of differences in expert/novice behavior by
+helping students identify patterns of solutions and learning how and
+when to apply them to particular
+problems\autocite{east_patternbased_1996,muller_pattern_2005,wallingford_first_1996}.
 
 \citeauthor{pears_survey_2007-1} conclude their
 \citeyear{pears_survey_2007-1} literature survey with the observation
@@ -294,37 +293,36 @@ We think this could be due to two reasons:
   and design solutions (problem-solving). The “appropriate” approach
   to teaching would depend on the goal.
 
-\item Even if goals were clearly stated it is likely many different
-  approaches could be used successfully if chosen intentionally to
-  align with the goal and measurements of success (assessment). In
-  many of the studies the metrics used to determine success suffer
-  from validity issues, e.g. the validity of final grades on a final
-  assessment depend tremendously on the design of that assessment and
-  there is little evidence to suggest course assessments are
-  intentionally designed with learning goals in mind.
+\item Even if goals were clearly stated it is likely that many
+  different approaches could be used successful if chosen
+  intentionally to align with the goal and measurements of success
+  (assessment). In many of the studies it is not immediately clear if
+  the measures of success used are appropriate for the stated
+  objectives. That is to say, the assessments used might not always be
+  measuring all aspects of the desired learning objectives.
 \end{enumerate}
 
-Finally, a \citeyear{koulouri_teaching_2014} study by
+Finally, in \citeyear{koulouri_teaching_2014},
 \citeauthor{koulouri_teaching_2014} conducted a quantitative analysis
 of different approaches to teaching introductory programming by
 varying three aspects: the language used, providing formative
 feedback, and introducing explicit problem solving
 training\autocite{koulouri_teaching_2014}. They found that choosing a
-language with a simpler syntax (Python over Java), and introducing
-explicit problem-solving training improved student learning, while
-providing more formative assessment did not seem to help. They
-speculate that the reason for the latter finding could be that
-students do not spend time looking at formative feedback, or do not
-understand what is given.
+language with a simpler syntax (Python instead of Java), and
+introducing explicit problem-solving training improved student
+learning, while providing more formative assessment did not seem to
+help. They speculate that the reason for the latter finding could be
+that students do not spend time looking at formative feedback, or do
+not understand what is given.
 
 We wish to build upon the past reviews of the field by suggesting an
-approach to designing learning systems that may more consistently
+approach to designing learning systems that may help to consistently
 address some of the shortcomings observed, and bring understanding to
 the successes. A large number of papers surveyed contain discussions
 of course objectives, pedagogical tools used, and assessments given,
 but rarely are these three components discussed together. We know from
-the engineering education literature that an effective learning
-system depends on the alignment of these three
+the engineering education literature that an effective learning system
+depends on the alignment of these three
 components\autocite{jamieson_creating_2009,pellegrino_rethinking_2006}.
 
 \subsection{Components of a learning
@@ -332,14 +330,16 @@ system}\label{sec:components-of-a-learning-system}
 
 A popular way to visualize an effective learning system is as a triad
 of objectives, instruction, and
-assessment\textcite{felder_designing_2003}, shown in Figure
+assessment\autocite{felder_designing_2003}, shown in Figure
 \ref{fig:learning-system}. The design of these three components is not
 sequential: each informs the other.
 
 \begin{figure}[h!]
   \centering
   \includestandalone[width=\textwidth]{felder_framework}%
-  \caption{Learning system}
+  \caption{Learning system as derived from
+    \citeauthor{felder_designing_2003}\autocite{felder_designing_2003}}
+  %%TODO: as derived from original figure
   \label{fig:learning-system}
 \end{figure}
 
@@ -360,22 +360,28 @@ tend to center around those that promote understanding of these
 concepts and exclude activities that might have a better chance at
 promoting general problem solving\autocite{biggs_enhancing_1996}.
 
-\section{Case Study}
-As noted, teaching OOP is a common area of interest in the literature. 
+\section{A hypothetical case study}
+As noted, teaching OOP is a common area of interest in the
+literature. While \citeauthor{robins_learning_2003} note there is a
+lack of evidence supporting any claim that OOP makes modeling problems
+any easier\autocite{robins_learning_2003}, we will incorporate it into
+a hypothetical introductory programming course to explore how its
+inclusion would affect the constructive alignment between course
+objectives, instructional methods, and assessment.
 
 It should be strongly noted that we are not advocating for OOP as a
 ``best'' teaching paradigm. Rather, we want to point out that from
-what has been reported it seems that it is often not taught
-effectively. What educators seem to miss is that OOP defines an
-entirely different paradigm for problem solving than is used in
-procedural programming\autocite{kolling_problem_1999}. As should not
-be surprising there are some problems for which OOP provides a good
-set of tools to solve in an efficient, elegant manner, namely those
-with solutions taht naturally map to real-world
+what has been reported teaching OOP effectively can be
+challenging. What many implementations seem to miss is that OOP
+defines an entirely different paradigm for problem solving than is
+used in procedural programming\autocite{kolling_problem_1999}. As
+should not be surprising there are some problems for which OOP
+provides a good set of tools to solve in an efficient, elegant manner,
+namely those with solutions that naturally map to real-world
 objects\autocite{raymond_art_2003}. Different problems may be better
 solved using a procedural, or functional
 paradigm\autocite{kay_history_1996,felleisen_functional_2009,crestani_experience_2010}. Ultimately,
-our goal should be to help students to analyze problem structures and
+our goal should be to help students analyze problem structures and
 make informed decisions regarding what paradigm would be best for a
 particular problem. What is not clear from the literature is whether
 or not this consideration is made when designing problems for a
@@ -384,7 +390,7 @@ concepts are added to a course ``on top of'' older content, without
 necessarily changing the problem
 sets\autocite{kolling_problem_1999,vilner_fundamental_2007}.
 
-\subsection{Object Oriented Programming}
+\subsection{Object oriented programming}
 
 Alan Kay originally conceived of object oriented programming as
 \emph{one} way to think about complex
@@ -398,8 +404,6 @@ problems\autocite{kay_history_1996}.
 
 %%TODO: link to knowledge/skills interaction literature
 %%TODO: bring in knowledge organization, focus on concepts vs. procedures
-
-[section on what an ideal alignment would look like using OOP] 
 
 In several reports of attempts to incorporate OOP into introductory
 programming courses, practitioners worried that time devoted to OOP
@@ -429,45 +433,140 @@ paradigm exists makes it very difficult for them to learn how to
 intentionally select and apply the ``best'' paradigm to solve a
 particular problem. \citeauthor{kolling_problem_1999} argues that
 performing a paradigm shift from procedural style to OOP is difficult,
-and so if OOP is a desired outcome then this should be taught
-\emph{first}.
+and so concludes that if OOP is a desired outcome then it should be
+taught \emph{first} since the reverse shift, from OOP to procedural,
+is conceptually easier.
 
-\section{Language choice}
+\subsection{Language choice}
 Choice of language does matter: If the learning objectives of an
 introductory programming course are to learn problem solving concepts
 then a language with a simpler syntax is preferable to one with more
 complex syntax features\autocite{koulouri_teaching_2014}. The
-explaination for this can be found in cognitive load theory (CLT),
+explanation for this can be found in cognitive load theory (CLT),
 which posits that learners have a finite capacity for their short-term
 memory, and for learning to occur, all aspects of the task must fit
 into this finite space. While some contributors to cognitive load are
 necessary for the task at hand, others are
-not\autocite{paas_cognitive_2003}. If, for example the goal is to
-teach problem-solving techniques there will be cognitive load
+not\autocite{paas_cognitive_2003}. If, for example, the goal is to
+teach problem-solving techniques, there will be cognitive load
 associated with thinking about different strategies one could
-use. Learning a programming language's syntax rules also adds to the
+use. Learning the syntax rules of a programming language adds to the
 cognitive load, but it does not aid in the process of learning
-problem-solving techniques. Thus, it is in the educators best interest
-to minimize cognitive load associated with features that do not
-directly help with the learning objectives of the course. 
+problem-solving techniques. Thus, it is in the educator's best
+interest to minimize cognitive load associated with features that do
+not directly help with the learning objectives of the course and
+select a teaching language with easy-to-learn syntax.
 
 In an attempt to address the concern that the two primary languages,
 C++ and Java, used to teach OOP in introductory courses, may be too
-complex for novice students, \textcite{goldwasser_teaching_2008}
-chooses Python to be the language of choice for introductory
-programming claiming that its relatively simple syntax allow new
-students to better engage with the OOP concepts rather than getting
-bogged down by details of the language.
+complex for novice students, \citeauthor{goldwasser_teaching_2008}
+select Python as a good choice for introductory programming claiming
+that its relatively simple syntax allow new students to better engage
+with the OOP concepts rather than getting bogged down by details of
+the language\autocite{goldwasser_teaching_2008}.
 
-\section{Problem choice}
+\subsection{Problem Solving}
+Developing problem solving was widely regarded as a common objective
+for introductory programming courses. Achieving this objective is more
+likely if the course begins with a focus on problem solving
+strategies, before any programming is
+introduced\autocite{koulouri_teaching_2014}. Separating
+problem-solving instruction in this way has a number of benefits
+grounded in cognitive science research: first, it serves to activate
+prior knowledge\autocite{ambrose_how_2010}. With problem-solving
+strategies fresh in their memory, learners will more easily apply them
+when they begin programming. Second, it helps manage cognitive
+load. Where as in the previous example of language choice we reduced
+cognitive load by choosing a language with a simpler syntax, here we
+separate two tasks that we know individually demand a high level of
+cognitive load for novices: learning problem-solving strategies, and
+learning programming techniques.
+
+\section{Choice of problems to assign}
 As previously noted, OOP provides a set of tools that naturally lend
-themselves to solving certain types of problems, but not others. An
+themselves to solving certain types of problems but not others. An
 educator teaching OOP should carefully select problems and challenges
-that make sense to be solved with an OOP paradigm. Of course,
-provoiding illustrative examples of problems that are \emph{not} best
+that make sense to be solved with an OOP approach. Of course,
+providing illustrative examples of problems that are \emph{not} best
 solved with an OOP approach would be useful provided there is also
 time for discussion of \emph{why} OOP might not be suited for certain
 problems and brief mention of alternative approaches.
+
+\section{Assessment}
+Often times assessment becomes the weak point of a learning
+system. Designing good assessment is
+hard\autocite{lister_blooming_2000,traynor_synthesis_2005}, and often good assessment can
+require significant time on the part of the instructor. Because of
+this, assessment is often the weak point, lowering the effectiveness
+of the entire system.
+
+If our course objective is to teach learners to solve problems with
+programming then an ideal assessment would be to give students a
+problem to solve, ask them to write a program to solve it as well as
+reflect upon the patterns they used in their solution. Asking for
+reflection prompts students to engage in meta-cognition, becoming
+aware of their own thinking process, which helps them become more
+effective
+learners\autocite{ambrose_how_2010,chi_selfexplanations_1989}. Of
+course evaluating this type of assessment is much more time consuming
+than a multiple-choice exam that can be automatically scored, or even
+than evaluating that the finished program runs correctly, which can be
+done automatically as well\autocite{cheang_automated_2003}.
+
+\section{Considerations and Limitations}
+In the above hypothetical example we had the luxury of complete
+freedom in designing all aspects of an introductory programming
+curriculum. We recognize this is almost always never the case in
+practice. However, we argue that following a framework such as
+constructive alignment as close as possible will help. Thinking about
+the framework will also encourage critical engagement with the
+constraints imposed by the institution. For example, there has been
+much interest in assessment tools used for introductory programming
+courses\autocite{lister_blooming_2000,lister_objectives_2001,sheard_exploring_2011},
+and in particular automated
+assessment\autocite{cheang_automated_2003,traynor_synthesis_2005,ihantola_review_2010}. In
+many cases the push towards automated assessment techniques is a
+response to increasing class sizes that instructors typically have
+little control over. In the event that a large class size dictates
+that some form of automated assessment be used, following the
+constructive alignment framework would constrain the types of course
+objectives and instruction that were feasible. For instance, if the
+primary course objective was to teach conceptual understanding of
+computer science, then a well-designed multiple-choice assessment
+could be used
+effectively\autocite{lister_blooming_2000,lister_objectives_2001}.
+
+\section{Discussion and future work}
+
+This literature review was by no means comprehensive, but we hope that
+it touched upon some of the notable areas in which educators have been
+experiencing challenges and successes in teaching introductory
+programming. We have pointed out a number of possible connections
+between computer science and cognitive science that may be worth
+deeper investigation. While we have seen how cognitive load theory can
+help reason about course design, there are also potentially
+interesting connects between cognitive load theory and object oriented
+design: objects are designed to encapsulate complexity to better
+manage it. Additionally, further exploring concepts of knowledge
+organization and differences between novices and exports may be a
+fruitful area to investigate the use of teaching programming to aid in
+analogical reasoning and abstract
+thinking\autocite{bennedssen_abstraction_2008}.
+
+\section{Conclusion}
+
+Recognizing that introductory programming is a common component of
+engineering curriculum, and that there is a national push to introduce
+it to an even larger population, it is important to think carefully
+about how we design programming education to impart the cognitive
+skills that will generally benefit learners even after the specific
+technologies they learn are no longer relevant. We strongly advocate
+for the use a framework such as constructive alignment, described in
+this paper, to inform the choices for course objectives, instructional
+techniques, and assessments. Using such a framework well help identify
+components of a course that may be contributing unnecessarily to
+cognitive load, or reasons why student outcomes might not match
+expectations assumed from course objectives.
 
 % \section{What are “the basics”}
 % Several papers discuss the relative merits of a more “modern” paradigm
@@ -500,87 +599,86 @@ problems and brief mention of alternative approaches.
 % ways of approaching and solving problems” should be a goal of
 % introductory programming courses.
 
-\section{Discussion}
 
-\section{Future Work}
+% \section{Future Work}
 
-There continues to be a disconnect between learning sciences and how
-programming paradigms and languages are selected for introductory
-courses. While there is quite a bit of exploration around connections
-between abstract thinking, threshold concepts, etc. and ``success'',
-“success” is not consistently defined, sometimes meaning the ability
-to write programs (e.g. with specifications given), sometimes focusing
-more on the ability to solve problems.
+% There continues to be a disconnect between learning sciences and how
+% programming paradigms and languages are selected for introductory
+% courses. While there is quite a bit of exploration around connections
+% between abstract thinking, threshold concepts, etc. and ``success'',
+% “success” is not consistently defined, sometimes meaning the ability
+% to write programs (e.g. with specifications given), sometimes focusing
+% more on the ability to solve problems.
 
-\subsection{Continued Ties to Learning Sciences}
+% \subsection{Continued Ties to Learning Sciences}
 
-The thread of learning science influence split into two branches, one
-further exploring the pattern-based approach and one exploring
-threshold concepts. While developing problem-solving skills remains a
-goal of CS1 only the pattern-based approach thread seems to focus on
-this aspect while the researchers exploring threshold concepts are
-more concerned with overall success in computer science without
-specific mention of problem-solving skills.
+% The thread of learning science influence split into two branches, one
+% further exploring the pattern-based approach and one exploring
+% threshold concepts. While developing problem-solving skills remains a
+% goal of CS1 only the pattern-based approach thread seems to focus on
+% this aspect while the researchers exploring threshold concepts are
+% more concerned with overall success in computer science without
+% specific mention of problem-solving skills.
 
-\subsubsection{Problem Solving}
+% \subsubsection{Problem Solving}
 
-Several studies pick up the pattern-based focus of programming to
-encourage problem-solving skill development from the
-1990s\autocite{muller_almost_2004,muller_pattern_2005,muller_patternoriented_2007,caspersen_instructional_2007-1}.
+% Several studies pick up the pattern-based focus of programming to
+% encourage problem-solving skill development from the
+% 1990s\autocite{muller_almost_2004,muller_pattern_2005,muller_patternoriented_2007,caspersen_instructional_2007-1}.
 
-In one of these studies, the authors draw from three concepts of
-cognitive science: cognitive load theory, cognitive apprenticeship,
-and the theory of worked examples, to design an introductory
-programming course\autocite{caspersen_instructional_2007-1}. It is
-interesting to note that they select these theories based on a human
-cognition model that resulted from computing: separate working and
-long term memory where learning is the process for transforming
-information from working to long-term memory. The course the authors
-describe teachs OOP but they never explain why the chose OOP as the
-paradigm, it is assumed that this is just a given feature of an
-introductory programming course.
+% In one of these studies, the authors draw from three concepts of
+% cognitive science: cognitive load theory, cognitive apprenticeship,
+% and the theory of worked examples, to design an introductory
+% programming course\autocite{caspersen_instructional_2007-1}. It is
+% interesting to note that they select these theories based on a human
+% cognition model that resulted from computing: separate working and
+% long term memory where learning is the process for transforming
+% information from working to long-term memory. The course the authors
+% describe teachs OOP but they never explain why the chose OOP as the
+% paradigm, it is assumed that this is just a given feature of an
+% introductory programming course.
 
-%%TODO: consider focusing on this and dropping threshold concepts and others. Potentally bring in pattern-based pedagogy
+% %%TODO: consider focusing on this and dropping threshold concepts and others. Potentally bring in pattern-based pedagogy
 
-\subsubsection{Threshold Concepts}
+% \subsubsection{Threshold Concepts}
 
-Some studies explore potential threshold
-topics\autocite{meyer_threshold_2005} for computer science and how
-they might be useful for informing course
-design\autocite{mccartney_liminal_2009,boustedt_threshold_2007}. \citeauthor{boustedt_threshold_2007}
-identify object oriented programming and pointers as candidate
-threshold topics based on interviews with students graduating with
-computer science degrees. The two concepts and so these concepts are
-in the context of computer science in general rather than introductory
-programming, thus there is not a clear link between these concepts and
-the goal of problem solving. In addition the authors note that OOP in
-particular is quite broad and suggest further work to narrow the focus
-of that threshold topic to one ore more specific aspects of OOP, such
-as how objects communicate between one another.
+% Some studies explore potential threshold
+% topics\autocite{meyer_threshold_2005} for computer science and how
+% they might be useful for informing course
+% design\autocite{mccartney_liminal_2009,boustedt_threshold_2007}. \citeauthor{boustedt_threshold_2007}
+% identify object oriented programming and pointers as candidate
+% threshold topics based on interviews with students graduating with
+% computer science degrees. The two concepts and so these concepts are
+% in the context of computer science in general rather than introductory
+% programming, thus there is not a clear link between these concepts and
+% the goal of problem solving. In addition the authors note that OOP in
+% particular is quite broad and suggest further work to narrow the focus
+% of that threshold topic to one ore more specific aspects of OOP, such
+% as how objects communicate between one another.
 
-\subsubsection{Objects-first vs. X}
-Much of the literature focuses on the debate between introducing
-object oriented programming in CS1 or whether introductory courses
-should teach a procedural style. Several researchers argue that an
-object-first approach emphasices coding constructs over other goals
-such as problem-solving and design
-\autocite{moritz_objectsfirst_2005,muller_guidelines_2005,reges_back_2006}. \textcite{moritz_objectsfirst_2005}
-propose a “design-first” approach that gets students to analyze
-problems and design solutions before writing any computer code.
+% \subsubsection{Objects-first vs. X}
+% Much of the literature focuses on the debate between introducing
+% object oriented programming in CS1 or whether introductory courses
+% should teach a procedural style. Several researchers argue that an
+% object-first approach emphasices coding constructs over other goals
+% such as problem-solving and design
+% \autocite{moritz_objectsfirst_2005,muller_guidelines_2005,reges_back_2006}. \textcite{moritz_objectsfirst_2005}
+% propose a “design-first” approach that gets students to analyze
+% problems and design solutions before writing any computer code.
 
-\autocite{vilner_fundamental_2007} found no significant difference in
-student performance on questions relating to recursion and efficiency
-between groups that were given an object-first curriculum vs. groups
-given a procedural-first curriculum. They did observe a significant
-difference between the two groups when asked to design an abstract
-data type: those who were in the objects-first group performed better
-than those in the procedural-first group. However, it is notable that
-the students were only tested on programming knowledge, not their
-ability to analyze problems and design solutions.
+% \autocite{vilner_fundamental_2007} found no significant difference in
+% student performance on questions relating to recursion and efficiency
+% between groups that were given an object-first curriculum vs. groups
+% given a procedural-first curriculum. They did observe a significant
+% difference between the two groups when asked to design an abstract
+% data type: those who were in the objects-first group performed better
+% than those in the procedural-first group. However, it is notable that
+% the students were only tested on programming knowledge, not their
+% ability to analyze problems and design solutions.
 
-\textcite{reges_back_2006} takes a ``back to basics'' approach eschewing
-the popular OOP and reverts his CS1 course back to a procedural style
-which allows him to put the emphasis back on problem solving.
+% \textcite{reges_back_2006} takes a ``back to basics'' approach eschewing
+% the popular OOP and reverts his CS1 course back to a procedural style
+% which allows him to put the emphasis back on problem solving.
 
 \vspace{4\baselineskip}\vspace{-\parskip} % Creaters proper 4 blank line spacing.
 
