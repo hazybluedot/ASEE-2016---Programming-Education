@@ -1,26 +1,27 @@
 \documentclass[12pt]{article}
 
+\usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
-% sorting=none will order citations in order of appearance
-% use sorting=nyt to sort by name, year, title
-\usepackage[backend=biber,autolang=hyphen, bibencoding=inputenc, isbn=false, uniquename=false, sorting=none, sortcites=true, style=numeric, autocite=superscript, url=false]{biblatex} % biblatex setup
-\DeclareLanguageMapping{american}{american-apa}
-\appto{\bibfont}{\footnotesize} % for 10pt bibliography
-%\usepackage{xunicode}
-\usepackage[american]{babel}
 \usepackage[babel]{csquotes}
-\usepackage{float}
 \usepackage{graphicx}
+\usepackage{etoolbox}
+\usepackage{changepage}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage[parfill]{parskip}
 \usepackage[margin=1in]{geometry}
+
+%\usepackage{xunicode}
 \usepackage[dvipsnames,table]{xcolor}
 \usepackage{tikz}
 \usetikzlibrary{positioning,arrows,shapes,fit}
 \usepackage{standalone}
-%\usepackage{mdframed}
-\usepackage{changepage}
-\usepackage{titlesec}
-\usepackage[parfill]{parskip}
-\usepackage{mdframed}
+
+% sorting=none will order citations in order of appearance
+% use sorting=nyt to sort by name, year, title
+\usepackage[backend=biber,autolang=hyphen, bibencoding=inputenc, isbn=false, uniquename=false, sorting=none, sortcites=true, style=numeric, autocite=superscript, url=false]{biblatex} % biblatex setup
+\addbibresource{./computing.bib}
+\appto{\bibfont}{\footnotesize} % for 10pt bibliography
 
 \titleformat*{\section}{\normalsize\bfseries} % Makes section titles 12 pt font
 \titleformat{\section}{\normalsize\bfseries}{}{}{}[]
@@ -28,7 +29,7 @@
 \titleformat{\subsubsection}{\bfseries}{}{}{}[]
 
 \let\textcite=\autocite
-\addbibresource{./computing.bib}
+
 
 \title{\large \textbf{Leveraging Historical Ties between Cognitive Science and
   Computer Science to Guide Programming Education}}
@@ -465,7 +466,7 @@ that its relatively simple syntax allow new students to better engage
 with the OOP concepts rather than getting bogged down by details of
 the language\autocite{goldwasser_teaching_2008}.
 
-\subsection{Problem Solving}
+\subsection{Problem solving}
 Developing problem solving was widely regarded as a common objective
 for introductory programming courses. Achieving this objective is more
 likely if the course begins with a focus on problem solving
@@ -513,7 +514,7 @@ than a multiple-choice exam that can be automatically scored, or even
 than evaluating that the finished program runs correctly, which can be
 done automatically as well\autocite{cheang_automated_2003}.
 
-\section{Considerations and Limitations}
+\section{Considerations and limitations}
 In the above hypothetical example we had the luxury of complete
 freedom in designing all aspects of an introductory programming
 curriculum. We recognize this is almost always never the case in
