@@ -1,5 +1,6 @@
 \documentclass[12pt]{article}
 
+\usepackage[utf8]{inputenc}
 % sorting=none will order citations in order of appearance
 % use sorting=nyt to sort by name, year, title
 \usepackage[backend=biber,autolang=hyphen, bibencoding=inputenc, isbn=false, uniquename=false, sorting=none, sortcites=true, style=numeric, autocite=superscript, url=false]{biblatex} % biblatex setup
@@ -8,7 +9,6 @@
 %\usepackage{xunicode}
 \usepackage[american]{babel}
 \usepackage[babel]{csquotes}
-\usepackage[utf8]{inputenc}
 \usepackage{float}
 \usepackage{graphicx}
 \usepackage[margin=1in]{geometry}
@@ -27,8 +27,8 @@
 \titleformat{\subsection}{\bfseries}{}{}{}[]
 \titleformat{\subsubsection}{\bfseries}{}{}{}[]
 
-%%\let\textcite=\autocite
-\addbibresource{computing.bib}
+\let\textcite=\autocite
+\addbibresource{./computing.bib}
 
 \title{\large \textbf{Leveraging Historical Ties between Cognitive Science and
   Computer Science to Guide Programming Education}}
