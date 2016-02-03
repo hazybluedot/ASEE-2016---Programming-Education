@@ -1,25 +1,28 @@
 \documentclass[12pt]{article}
 
+\usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
-% sorting=none will order citations in order of appearance
-% use sorting=nyt to sort by name, year, title
-\usepackage[backend=biber,autolang=hyphen, bibencoding=inputenc, isbn=false, uniquename=false, sorting=none, sortcites=true, style=numeric, autocite=superscript, url=false]{biblatex} % biblatex setup
-\DeclareLanguageMapping{american}{american-apa}
-\appto{\bibfont}{\footnotesize} % for 10pt bibliography
-%\usepackage{xunicode}
-\usepackage[american]{babel}
 \usepackage[babel]{csquotes}
-\usepackage{float}
 \usepackage{graphicx}
+\usepackage{etoolbox}
+\usepackage{changepage}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage[parfill]{parskip}
 \usepackage[margin=1in]{geometry}
+
+%\usepackage{xunicode}
 \usepackage[dvipsnames,table]{xcolor}
 \usepackage{tikz}
 \usetikzlibrary{positioning,arrows,shapes,fit}
 \usepackage{standalone}
-%\usepackage{mdframed}
-\usepackage{changepage}
-\usepackage{titlesec}
-\usepackage[parfill]{parskip}
+
+% sorting=none will order citations in order of appearance
+% use sorting=nyt to sort by name, year, title
+\usepackage[backend=biber,autolang=hyphen, bibencoding=inputenc, isbn=false, uniquename=false, sorting=none, sortcites=true, style=numeric, autocite=superscript, url=false]{biblatex} % biblatex setup
+\addbibresource{./computing.bib}
+\appto{\bibfont}{\footnotesize} % for 10pt bibliography
+
 
 \titleformat*{\section}{\normalsize\bfseries} % Makes section titles 12 pt font
 \titleformat{\section}{\normalsize\bfseries}{}{}{}[]
@@ -27,7 +30,7 @@
 \titleformat{\subsubsection}{\bfseries}{}{}{}[]
 
 \let\textcite=\autocite
-\addbibresource{./computing.bib}
+
 
 \title{\large \textbf{Leveraging Historical Ties between Cognitive Science and
   Computer Science to Guide Innovative Use of Computers in Education}}
@@ -52,7 +55,7 @@
 \pagestyle{empty}
 
 % conflict between teaching programming syntax, teaching ``how to program'', teaching high-level concepts like abstractions and how to ``do'' problem solving.
-\section{Coding for Everyone}
+\section*{Coding for Everyone}
 In the past few years, there has been increasing interest to get more
 people, regardless of background, to learn to program. In fact
 President Obama recently made a statement calling on all children to
@@ -160,7 +163,7 @@ We needed a framework to consistently evaluate and starting from
 \citeauthor{jamieson_creating_2009}'s
 (\citeyear{jamieson_creating_2009}) to ground educational research
 activities in how people learn we identified the concept of
-\empha{constructive alignment} as a promising one. Following the
+\emph{constructive alignment} as a promising one. Following the
 references in \citeauthor{jamieson_creating_2009}'s report as well as
 conducting targeted literature searches for ``constructive alignment''
 we were able to find descriptions of this
