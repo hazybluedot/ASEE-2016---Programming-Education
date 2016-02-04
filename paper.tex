@@ -228,14 +228,14 @@ distinction between knowledge and strategies, 3) the distinction
 between program comprehension and generation, and 4) a comparison of
 OOP to procedural styles of
 programming\autocite{robins_learning_2003}. They found that the
-biggest challenge for novice programmers was not understanding the
+biggest challenge for novice programmers was not in understanding the
 basic concepts, but knowing how to apply them. This finding is
-consistent understanding of how we
+consistent with current understanding of how we
 learn\autocite{bransford_how_2000,ambrose_chapter_2010}, and with
 studies of expert/novice behavior in other domains, such as
 statics\autocite{litzinger_cognitive_2010}. In both cases the
 suggestion is that helping students learn strategies that work is
-crucial to helping them become effective novices, i.e. devote
+crucial to helping them become \emph{effective} novices, i.e. devote
 instructional time to problem-solving strategies and how to apply
 them.
 
@@ -277,7 +277,7 @@ paradigms\autocite{east_patternbased_1996}. This approach closely
 aligns with understanding of differences in expert/novice behavior by
 helping students identify patterns of solutions and learning how and
 when to apply them to particular
-problems\autocite{east_patternbased_1996,muller_pattern_2005,wallingford_first_1996}.
+problems\autocite{east_patternbased_1996,muller_pattern_2005,wallingford_first_1996,reed_incorporating_1998}.
 
 \citeauthor{pears_survey_2007-1} conclude their
 \citeyear{pears_survey_2007-1} literature survey with the observation
@@ -396,7 +396,7 @@ sets\autocite{kolling_problem_1999,vilner_fundamental_2007}.
 Alan Kay originally conceived of object oriented programming as
 \emph{one} way to think about complex
 systems\autocite{kay_history_1996}. The underlying metaphore of Kay's
-conception of OOP was that of the biological cell: each object is
+conception for OOP was the biological cell: each object is
 designed to accomplish a specific set of tasks where the complexity of
 these tasks is encapsulated within the object. Objects interact with
 one another by sending and receiving messages, and systems of these
@@ -414,13 +414,27 @@ in some cases pointers. This concern is misplaced, under an OOP
 paradigm the ``basics of programming'' are not the same as when
 working from a procedural paradigm. OOP defines a completely different
 set of tools for problem solving, and it is these tools and concepts
-that become the
-``basics''\autocite{kolling_problem_1999,kay_history_1996}.
+that become the ``basics'': objects, messages, inheritance, and
+polymorphism\autocite{kolling_problem_1999,kay_history_1996}.
 
 For instance, if taking a patterns-based approach to teaching
-programming one could use either a procedural paradigm or an OOP
+programming, one could use either a procedural paradigm or an OOP
 paradigm, but the fundamental patterns would be quite different
-depending on the paradigm\autocite{wallingford_first_1996}.
+depending on the paradigm\autocite{wallingford_first_1996}. Useful
+procedural patterns might be:
+
+\begin{description}
+\item[read-evaluate-print] reading a piece of data, evaluating it, and output the result
+\item[guarded-action] if a guard-condition is satisfied, take action.
+\end{description}
+
+While useful OOP patterns might be:
+
+\begin{description}
+\item[state]  provide controlled access to a body of data
+\item[view] decouple an object's state from its representation
+\item[decorator] add functionally to an object without modifying its internal structure.
+\end{description}
 
 Ultimately, if our goal is to teach problem solving in general, we
 would be doing a grave disservice to our students to leave with the
