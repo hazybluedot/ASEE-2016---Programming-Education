@@ -25,8 +25,8 @@
 
 \titleformat*{\section}{\normalsize\bfseries} % Makes section titles 12 pt font
 \titleformat{\section}{\normalsize\bfseries}{}{}{}[]
-\titleformat{\subsection}{\bfseries}{}{}{}[]
-\titleformat{\subsubsection}{\bfseries}{}{}{}[]
+\titleformat{\subsection}[runin]{\bfseries}{}{}{}[.]
+\titleformat{\subsubsection}[runin]{\itshape}{}{}{}[.]
 
 \let\textcite=\autocite
 
@@ -449,19 +449,50 @@ particular problem. \citeauthor{kolling_problem_1999} argues that
 performing a paradigm shift from procedural style to OOP is difficult,
 and so concludes that if OOP is a desired outcome then it should be
 taught \emph{first} since the reverse shift, from OOP to procedural,
-is conceptually easier. What this 
+is conceptually easier. What this recommendation neglects to account
+for however is that both paradigms depend upon authoring programs,
+whether they be textual or iconic, and this authoring process takes a
+certain amount of cognitive capacity.
+
+\subsection{Cognitive load theory}
+Cognitive load theory (CLT) is based on the premise that the capacity
+of Working Memory, where all conscious cognitive processing takes
+place, has a finite and relatively small capacity: we are able to
+manage 2-3 interacting elements at a time in our working
+memory. Examples of ``interacting elements'' in the current context
+would be something like recalling and using the syntax and grammar of
+a particular programming language, reasoning about the behavior of a
+single object in an OOP setting, or reasoning about a solution to a
+particular high-level problem. CLT posits that learners have a finite
+capacity for their short-term memory, and for learning to occur, all
+aspects of the task must fit into this finite space. While some
+contributors to cognitive load are necessary for the task at hand,
+others are not\autocite{paas_cognitive_2003}.
+
+In a superficial way, CLT theory would suggest that OOP is a helpful
+paradigm for managing complexity: objects encapsulate complexity by
+hiding the details of implementation behind a simple interface. For
+example, and object that represents a list of items may have
+operations to add and remove items from the list. Conceptually we can
+use this object with our common understanding of what it means to
+``add'' and ``item'' to a ``list''. Critically, we do \emph{not} need
+to be aware of how the adding and removal of the item is actually
+implemented in code, or even whether how the storage is structured in
+memory (e.g. an array or a linked-list). We refer to this use of CLT
+to justify the reduction of complexity of OOP as superficial because
+it focus on the conceptual paradigm itself without regard to
+implementing it in some programming environment. In practice, we
+usually ask our students to implement OOP concepts in a program. That
+task requires not only understanding OOP as a paradigm, but also
+working with the programming environment, authoring a program, and
+most likely debugging it as well.
 
 \subsection{Language choice}
 Choice of language does matter: If the learning objectives of an
 introductory programming course are to learn problem solving concepts
 then a language with a simpler syntax is preferable to one with more
 complex syntax features\autocite{koulouri_teaching_2014}. The
-explanation for this can be found in cognitive load theory (CLT),
-which posits that learners have a finite capacity for their short-term
-memory, and for learning to occur, all aspects of the task must fit
-into this finite space. While some contributors to cognitive load are
-necessary for the task at hand, others are
-not\autocite{paas_cognitive_2003}. If, for example, the goal is to
+explanation for this can be found in CLT. If, for example, the goal is to
 teach problem-solving techniques, there will be cognitive load
 associated with thinking about different strategies one could
 use. Learning the syntax rules of a programming language adds to the
@@ -478,6 +509,27 @@ select Python as a good choice for introductory programming claiming
 that its relatively simple syntax allow new students to better engage
 with the OOP concepts rather than getting bogged down by details of
 the language\autocite{goldwasser_teaching_2008}.
+
+\subsubsection{Iconic versus textual languages}
+
+In theory a iconic programming environment such as
+Scratch\autocite{resnick_scratch_2009} or
+Alice\autocite{cooper_using_2003} should aid in the learning of higher
+level concepts since it eliminates the extraneous cognitive load of
+dealing with syntax and grammar of a language. In fact, there has been
+success in using iconic languages to teach first year programming
+\autocite{calloni_iconic_1997}, and research indicates that teaching
+graphical programming first does not inhibit a student from later
+learning textual programming languages\autocite{hundhausen_can_2009}.
+
+\citeauthor{snook_incorporation_2005} describe efforts to use the Alice
+programing environment to teach introductory programming
+concepts\autocite{snook_incorporation_2005}. Interestingly a later
+report assessing the efficacy of the curriculum which included this
+use of Alice indicated that while pre-post testing indicated learning
+gains with Alice, focus group data indicated a dissatisfaction with
+Alice as an introductory language which was later replaced with
+LabVIEW\autocite{lohani_reformulating_2011}.
 
 \subsection{Problem solving}
 Developing problem solving was widely regarded as a common objective
@@ -696,21 +748,19 @@ expectations assumed from course objectives.
 % the popular OOP and reverts his CS1 course back to a procedural style
 % which allows him to put the emphasis back on problem solving.
 
-\subsection{Cognitive Load Theory}
-
-
 \section{Notes for Revisions}
 
 If teaching OOP concepts is a goal of the course one must ask if
-/implementation/ of OOP programs is also a goal.  If writing OOP code
-is a goal and it is unreasonable to assume that students will have
-already mastered syntax and enough understanding of the development
-environment (interpreting compiler messages, debugging, etc) then CLT
-would suggest that extensive /scaffolding/ be employed to reduce
-extraneous cognitive load. Being careful to sequence simple-to-complex
-concepts will help reduce /intrinsic/ cognitive load: i.e. teach bare
-objects and make sure students have began to automate tasks associated
-with implementing bare objects before introducing inheritance.
+\emph{implementation} of OOP programs is also a goal.  If writing OOP
+code is a goal and it is unreasonable to assume that students will
+have already mastered syntax and enough understanding of the
+development environment (interpreting compiler messages, debugging,
+etc) then CLT would suggest that extensive \emph{scaffolding} be
+employed to reduce extraneous cognitive load. Being careful to
+sequence simple-to-complex concepts will help reduce /intrinsic/
+cognitive load: i.e. teach bare objects and make sure students have
+began to automate tasks associated with implementing bare objects
+before introducing inheritance.
 
 Keep in mind that providing scaffolding for syntax and grammar,
 e.g. in the form of worked examples, or implementation in which
@@ -730,20 +780,14 @@ success. A possible exception might be if one considers a spiral
 curriculum, but the success of this still depends on close
 coordination across courses and instructors.
 
-The authors of the Lohani et al report describe efforts to use the
-Alice programing environment to teach introductory programming
-concepts\autocite{lohani_reformulating_2011}. In theory a graphical
-programming environment should aid in the , learning of higher level
-concepts since it eliminates the extraneous cognitive load of worrying
-about syntax and grammar. In fact, there has been success in using
-iconic languages to teach first year programming
-\autocite{calloni_iconic_1997}, and research indicates that teaching
-graphical programming first does not inhibit a student from later
-learning textual programming languages\autocite{hundhausen_can_2009}.
-
 Eric Raymond describes three different kinds of complexity in software
 design: essential complexity, optional complexity, and accidental
-complexity
+complexity. This has interesting parallels to the different types of
+cognitive load in CLT. In particular the notion of \emph{essential
+  complexity}, like \emph{intrinsic} cognitive load is associated with
+the the solution itself: a solution to a complex problem will be
+essentially complex due to the complexity associated with the problem
+itself.
 
 \vspace{4\baselineskip}\vspace{-\parskip} % Creaters proper 4 blank line spacing.
 
