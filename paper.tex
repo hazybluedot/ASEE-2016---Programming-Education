@@ -58,13 +58,13 @@
 
 % conflict between teaching programming syntax, teaching ``how to program'', teaching high-level concepts like abstractions and how to ``do'' problem solving.
 \section*{Coding for everyone}
-In the past few years, there has been increasing interest to get more
-people, regardless of background, to learn to program. In fact,
-President Obama recently made a statement calling on all children to
-have the opportunity to learn about computer
+In the past few years, there has been increasing interest in
+encouraging more people, regardless of background, to learn to
+program. In fact, President Obama recently made a statement calling on
+all children to have the opportunity to learn about computer
 science\autocite{whitehouse_computer_2016}. Sites such as code.org
 promote CS education opportunities for all, citing statistics about
-STEM jobs and arguing that in the 21st century knowledge about
+STEM jobs and arguing that in the 21st century, knowledge about
 computer science is foundational\autocite{code.org_every_2016}. Many
 institutions of higher education either have programming requirements
 for non-computer-science majors, or have been expanding programming to
@@ -73,17 +73,16 @@ the authors of this paper's institution, all first year general
 engineering students are required to complete an introductory
 programming module as part of their first-year engineering course, and
 in general ``basic programming skills'' is a common desired outcome
-across engineering
-curricula\autocite{reid_classification_2014}.
+across engineering curricula\autocite{reid_classification_2014}.
 
 This coding-for-all paradigm juxtaposed with the observation that
 technology is changing rapidly, and the half-life of technical skills
-is decreasing\autocite{nae_educating_2004}, it would seem that
+is decreasing\autocite{nae_educating_2004}, might seem to indicate that
 teaching programming is a questionable use of class time: the language
 and paradigm students are taught will likely not be the same they are
 asked to use in their first job post-graduation. However, if we
 acknowledge that learning to program is more than simply learning to
-write code, and in particular if we draw on work from the early era of
+write code, and in particular, if we draw on work from the early era of
 computing which closely linked programming to problem solving and
 cognitive skills, we can argue that regardless of language or
 paradigm, learning to program may actually be a way to learn to
@@ -94,7 +93,7 @@ computers had the potential to ``augment the human intellect''
 \autocite{engelbart_augmenting_1962}, a much more expansive view than
 simply becoming tools to automate tedious calculations. What was meant
 by this was that computing allows for new ways of dealing with
-complexity, provides new metaphors for thinking about
+complexity, and provides new metaphors for thinking about
 systems\autocite{kay_history_1996}. Early work demonstrated that with
 the aid of computers, children could engage with tasks and concepts
 that had previously been considered ``advanced'', and through
@@ -102,7 +101,7 @@ interacting with computers, children could become more aware of their
 own cognitive processes \autocite{papert_mindstorms_1980}. Thus, the
 fact that specific technologies may be obsolete by the time students
 graduate may be beside the point, there are lasting cognitive benefits
-learning to interact with a computer.
+learning to interact with a computer can provide.
 
 While there are some recent studies which investigate programming
 education as a means of teaching problem-solving, there is also a
@@ -116,11 +115,14 @@ assessments administered, must be chosen intentionally with this goal
 in mind. 
 
 In this paper we will present a brief summary of current published
-work on introductory programming education. In particular we will
+work on introductory programming education. In particular, we will
 explore the alignment of course objectives, pedagogical strategies,
 and assessments, and will offer a potential framework to help think
 about both the design and evaluation of introductory programming
-courses.
+courses. We will then provide a hypothetical case study of a
+introductory programming course organized around this framework and
+discuss implications of different instructional strategies through the
+lens of a theory of cognitive processes called cognitive load theory.
 
 %“Computing enters as a new representation system with new and useful
 %metaphors for dealing with complexity, especially of systems”
@@ -145,25 +147,27 @@ courses.
 
 \section*{Methods}
 Assuming that there would be more comprehensive research of
-introductory programming in the computer science community we began
-with targeted searches of the ACM digital library for `introductory
-programming'. Once we found key papers that seemed to indicate a call
-to action
+introductory programming in the computer science community, we began
+with targeted searches of the ACM digital library for the key phrase
+`introductory programming'. Once we found key papers that seemed to
+indicate a call to action
 \autocite[e.g.][]{mccracken_multinational_2001,kolling_problem_1999},
 or a survey of practices
 \autocite[e.g.][]{pears_survey_2007-1,robins_learning_2003} we used
 the `cited by' list to find additional relevant papers.
 
-Because the literature search of introductory programming seemed to be
-interest in why and how programming was taught, we needed a documented
-framework to consistently evaluate and starting from
+Because the literature search of introductory programming resulted in
+variety of examples of how and why programming was taught, we needed a
+documented framework to consistently evaluate each one and guide our
+hypothetical course design. Starting from
 \citeauthor{jamieson_creating_2009}'s
-(\citeyear{jamieson_creating_2009}) to ground educational research
-activities in how people learn we identified the concept of
-\emph{constructive alignment} as a promising one. Following the
-references in \citeauthor{jamieson_creating_2009}'s report as well as
-conducting targeted literature searches for ``constructive alignment''
-we were able to find descriptions of this
+(\citeyear{jamieson_creating_2009}) call to ground educational
+research activities in how people learn we identified the concept of
+\emph{constructive alignment} as a promising framework to evaluate and
+design learning environments. Following the references in
+\citeauthor{jamieson_creating_2009}'s report as well as conducting
+targeted literature searches for ``constructive alignment'' we were
+able to find descriptions of this
 framework\autocite{jamieson_creating_2009,pellegrino_rethinking_2006,felder_designing_2003,biggs_enhancing_1996}.
 %% TODO: mention that we chose the framework after analyzing the above
 %% citations, i.e. it wasn't a direct pull from jamieson
@@ -193,7 +197,7 @@ vs. object oriented
 which language is ``best'', often times with regard to a particular
 paradigm (e.g. OOP with Python
 vs. Java\autocite{goldwasser_teaching_2008,koulouri_teaching_2014}),
-and best teaching practices (e.g. use of “pair programming”
+and best teaching practices (e.g. use of ``pair programming''
 environments\autocite{williams_support_2001,mcdowell_effects_2002,thomas_code_2003,chong_social_2007,salleh_empirical_2011}). However,
 the \emph{reasons} for picking one paradigm over another tend to be
 about industry demand, rather than intentionally choosing a paradigm
@@ -206,14 +210,15 @@ to watch recorded lectures at home and use class time for working on
 activities, has recently been a hot topic in higher education and
 there have been a continuous number of examples of well-intentioned
 practitioners flipping their classroom without adjusting course
-objectives, content, and activities to work under the flipped-classroom
-model\autocite{desantis_students_2015}. Likewise, anyone can teach
-elements of object oriented programming in their introductory
-programming courses, but unless critical aspects of the course are
-adjusted: background reading, rethinking what the ``fundamental
-concepts'' are, the types of problems assigned, and methods of
-assessment, the incorporation of OOP will likely create confusion for
-students and frustration for instructor\autocite{kolling_problem_1999}.
+objectives, content, and activities to work under the
+flipped-classroom model\autocite{desantis_students_2015}. Likewise,
+anyone can teach elements of object oriented programming in their
+introductory programming courses, but unless critical aspects of the
+course are adjusted: background reading, rethinking what the
+``fundamental concepts'' are, the types of problems assigned, and
+methods of assessment, the incorporation of OOP will likely create
+confusion for students and frustration for
+instructor\autocite{kolling_problem_1999}.
 
 %% TODO: more directed title
 %% TODO: possibly use subheadings to ``tweet'' the major takeaways from each section,
@@ -256,16 +261,16 @@ already know\autocite{streveler_learning_2008,slotta_helping_2006}.
 %% (CHEER chapter and Streveler paper)
 
 While the \citeauthor{mccracken_multinational_2001} study validated the
-experiences of many introductory programming instructors it did not
+experiences of many introductory programming instructors, it did not
 result in critical change to address the problems. Rather, what we
-have seen since the 1990s is been an increasing interest in where
+have seen since the 1990s has been an increasing interest in where
 object oriented programming should be placed within the curriculum
 with debates between objects-first vs procedural-fist, but little
 question of why object oriented design should be included at all other
 than that it continues to be a popular paradigm in industry.
 
 There remains a desire that introductory programming courses should
-teach problem-solving skills, though only a few papers present
+teach problem-solving skills, though only a few authors present
 evidence that the implementation of this goal is informed by cognitive
 science\autocite{kramarski_cognitivemetacognitive_1997,reed_incorporating_1998,muller_supporting_2008}. One
 thread in particular has received regular attention:
@@ -281,8 +286,8 @@ problems\autocite{east_patternbased_1996,muller_pattern_2005,wallingford_first_1
 \citeauthor{pears_survey_2007-1} conclude their
 \citeyear{pears_survey_2007-1} literature survey with the observation
 that despite the volume of work exploring the implementation of
-introductory programming courses “there is little systematic evidence
-to support any particular approach.”\autocite{pears_survey_2007-1}
+introductory programming courses ``there is little systematic evidence
+to support any particular approach.''\autocite{pears_survey_2007-1}
 We think this could be due to two reasons:
 
 \begin{enumerate}
@@ -290,7 +295,7 @@ We think this could be due to two reasons:
   introductory course should be: the ability to write a complete,
   working program, the ability to answer conceptual questions about
   computing and computer science, or the ability to analyze problems
-  and design solutions (problem-solving). The “appropriate” approach
+  and design solutions (problem-solving). The ``appropriate'' approach
   to teaching would depend on the goal.
 
 \item Even if goals were clearly stated it is likely that many
@@ -309,11 +314,11 @@ varying three aspects: the language used, providing formative
 feedback, and introducing explicit problem solving
 training\autocite{koulouri_teaching_2014}. They found that choosing a
 language with a simpler syntax (Python instead of Java), and
-introducing explicit problem-solving training improved student
-learning, while providing more formative assessment did not seem to
-help. They speculate that the reason for the latter finding could be
-that students do not spend time looking at formative feedback, or do
-not understand what is given.
+introducing explicit problem-solving training, improved student
+learning. They also found, however, that providing more formative
+assessment did not seem to help. They speculate that the reason for
+the latter finding could be that students do not spend time looking at
+formative feedback, or do not understand the feedback that is given.
 
 We wish to build upon the past reviews of the field by suggesting an
 approach to designing learning systems that may help to consistently
@@ -354,8 +359,8 @@ assessment addresses lower levels of learning than the objectives
 specify, ``the system will be driven by backwash from testing, not by
 the curriculum.''\autocite[][p. 350]{biggs_enhancing_1996}. For
 example, if an objective of a programming course is that learners will
-develop problem solving skills, but assessment only consist of test of
-programming concepts and syntax, teaching/learning activities would
+develop problem solving skills, but assessment only consists of tests
+of programming concepts and syntax, teaching/learning activities would
 tend to center around those that promote understanding of these
 concepts and exclude activities that might have a better chance at
 promoting general problem solving\autocite{biggs_enhancing_1996}.
@@ -371,7 +376,7 @@ objectives, instructional methods, and assessment.
 
 It should be strongly noted that we are not advocating for OOP as a
 ``best'' teaching paradigm. Rather, we want to point out that from
-what has been reported teaching OOP effectively can be
+what has been reported, teaching OOP effectively can be
 challenging. What many implementations seem to miss is that OOP
 defines an entirely different paradigm for problem solving than is
 used in procedural programming\autocite{kolling_problem_1999}. As
@@ -379,7 +384,7 @@ should not be surprising there are some problems for which OOP
 provides a good set of tools to solve in an efficient, elegant manner,
 namely those with solutions that naturally map to real-world
 objects\autocite{raymond_art_2003}. Different problems may be better
-solved using a procedural, or functional
+solved using a procedural, functional, or data-flow
 paradigm\autocite{kay_history_1996,felleisen_functional_2009,crestani_experience_2010}. Ultimately,
 our goal should be to help students analyze problem structures and
 make informed decisions regarding what paradigm would be best for a
@@ -389,6 +394,38 @@ particular course. Indeed, in some cases there is evidence that OOP
 concepts are added to a course ``on top of'' older content, without
 necessarily changing the problem
 sets\autocite{kolling_problem_1999,vilner_fundamental_2007}.
+
+\subsection{Cognitive load theory}
+Cognitive load theory (CLT) is based on the premise that the capacity
+of our working memory, where all conscious cognitive processing takes
+place, is finite and relatively small: we are able to manage 2-3
+interacting elements at a time. Examples of ``interacting elements''
+in the current context would be recalling and using the syntax and
+grammar of a particular programming language, reasoning about the
+behavior of a single object in an OOP environment, or reasoning about
+a solution to a particular high-level problem. CLT posits that in
+light of this finite capacity of working memory, for learning to
+occur, all aspects of a task must fit into this finite space. While
+some contributors to cognitive load are necessary for the task at
+hand, others are not\autocite{paas_cognitive_2003}. Cognitive load can
+be divided into three different categories: \emph{intrinsic} cognitive
+load is due to the complexity of the task itself and generally can not
+be reduced without simplifying the task. \emph{Extraneous} cognitive
+load is associated with work that is due to the instructional method,
+but not part of the task at hand. For instance, if the educational
+goal is to complete a programming task, but learners must search and
+interpret reference material in order to do so, the search and
+interpretation of this material would be considered extraneous
+cognitive load. Finally, \emph{germane} cognitive load is also a
+result of the instructional design, but unlike extraneous load,
+germane load enhances the learning process. For instance, if a
+learning goal is that students are able to navigate and use reference
+material, than the previous example would be considered germane
+cognitive load. What this example highlights is that whether
+complexity due to the instruction design is extraneous or germane
+depends on the specific learning goals. The role of the instructional
+designer then is to reduce extraneous load and intentionally managing
+germane load.
 
 \subsection{Object oriented programming}
 %% Reviewer: more explicit connections to cogsci
@@ -409,7 +446,7 @@ In several reports of attempts to incorporate OOP into introductory
 programming courses, practitioners worried that time devoted to OOP
 concepts would necessarily reduce time spent on the ``basics of
 programming'', usually defined as conditional statements, loops, and
-in some cases pointers. This concern is misplaced, under an OOP
+in some cases pointers. This concern is misplaced; under an OOP
 paradigm the ``basics of programming'' are not the same as when
 working from a procedural paradigm. OOP defines a completely different
 set of tools for problem solving, and it is these tools and concepts
@@ -436,8 +473,8 @@ While useful OOP patterns might be:
 \end{description}
 
 Ultimately, if our goal is to teach problem solving in general, we
-would be doing a grave disservice to our students to leave with the
-impression that there is only one paradigm, whether it be OOP,
+would be doing a grave disservice to our students to leave them with
+the impression that there is only one paradigm, whether it be OOP,
 procedural, functional, or something not yet invented. As previously
 mentioned, OOP and procedural paradigms are comprised of fundamentally
 different concepts for problem solving, and so again is the functional
@@ -450,60 +487,84 @@ performing a paradigm shift from procedural style to OOP is difficult,
 and so concludes that if OOP is a desired outcome then it should be
 taught \emph{first} since the reverse shift, from OOP to procedural,
 is conceptually easier. What this recommendation neglects to account
-for however is that both paradigms depend upon authoring programs,
-whether they be textual or iconic, and this authoring process takes a
-certain amount of cognitive capacity.
-
-\subsection{Cognitive load theory}
-Cognitive load theory (CLT) is based on the premise that the capacity
-of Working Memory, where all conscious cognitive processing takes
-place, has a finite and relatively small capacity: we are able to
-manage 2-3 interacting elements at a time in our working
-memory. Examples of ``interacting elements'' in the current context
-would be something like recalling and using the syntax and grammar of
-a particular programming language, reasoning about the behavior of a
-single object in an OOP setting, or reasoning about a solution to a
-particular high-level problem. CLT posits that learners have a finite
-capacity for their short-term memory, and for learning to occur, all
-aspects of the task must fit into this finite space. While some
-contributors to cognitive load are necessary for the task at hand,
-others are not\autocite{paas_cognitive_2003}.
+for however is that both paradigms depend upon authoring programs in
+some language, and this authoring process takes a certain amount of
+cognitive capacity. To justify an objects-first approach we would have
+to verify that the cognitive load associated with OOP concepts
+themselves combined with the cognitive load of learning to author a
+program in a particular environment, do not exceed the learner's
+working memory capacity.
 
 In a superficial way, CLT theory would suggest that OOP is a helpful
-paradigm for managing complexity: objects encapsulate complexity by
-hiding the details of implementation behind a simple interface. For
-example, and object that represents a list of items may have
-operations to add and remove items from the list. Conceptually we can
-use this object with our common understanding of what it means to
-``add'' and ``item'' to a ``list''. Critically, we do \emph{not} need
+paradigm for managing cognitive omplexity: objects encapsulate
+complexity by hiding the details of implementation behind a simple
+interface. For example, an object that represents a list of items may
+have operations to add and remove items from the list. Conceptually we
+can use this object with our common understanding of what it means to
+``add'' an ``item'' to a ``list''. Critically, we do \emph{not} need
 to be aware of how the adding and removal of the item is actually
-implemented in code, or even whether how the storage is structured in
-memory (e.g. an array or a linked-list). We refer to this use of CLT
-to justify the reduction of complexity of OOP as superficial because
-it focus on the conceptual paradigm itself without regard to
+implemented in code, or even how the storage is structured in memory
+(e.g. an array or a linked-list). We refer to this use of CLT to
+justify the reduction of complexity of OOP as superficial because it
+focuses on only the conceptual paradigm itself without regard to
 implementing it in some programming environment. In practice, we
-usually ask our students to implement OOP concepts in a program. That
-task requires not only understanding OOP as a paradigm, but also
-working with the programming environment, authoring a program, and
-most likely debugging it as well.
+usually ask our students to implement OOP concepts in a particular
+programming language. That task requires not only understanding OOP as
+a paradigm, but also working with the programming environment,
+authoring a program, understanding the syntax and grammar of the
+language, and most likely debugging it as well.
+
+\subsection{Cognitive challenges teaching OOP}
+A behavior that characterizes expert programmers is the ability to
+easily shift between different abstraction layers of a problem
+space\autocite{armoni_teaching_2013}. This ability may be especially
+crucial to becoming fluent in OOP as the concepts are somewhat further
+removed from the actual syntax than in other paradigms. For example,
+in the procedural paradigm the central concept is that of the
+procedure, or subroutine. Subroutines are simply collections of
+imperative commands grouped together under a label. Thus, if someone
+can write and understand imperative code, the conceptual leap to
+understanding the procedural paradigm is relatively small. In
+contrast, to understand objects in OOP one must understand the concept
+of state and methods operating on the state. Both state and method are
+implemented with code (generally imperative), but to understand how an
+object functions one has to imagine its initial state, and then how
+each method call would change this state. Cognitive load theory would
+suggest that understanding the dynamic interaction of state and method
+calls is more challenging than grouping lines of imperative codes into
+re-usable procedures. Thus to be fluent in OOP design a programmer
+\emph{must} be able to switch between thinking at the object layer and
+the program layer. Teaching abstraction is best done by doing it by
+example, while being explicit about the abstractions
+used\autocite{armoni_teaching_2013}. However, we must keep in mind the
+limited capacity of working memory: if the cognitive load associated
+with writing code and thinking about state and methods fills up a
+learners working memory they may have difficult learning concepts of
+abstraction, even when the instructor explicitly points them out. To
+reduce the cognitive load associated with writing code and working
+with object state and methods, these tasks must be practiced until
+somewhat automated: they can be done without conscious
+thought\autocite{ambrose_chapter_2010}.
 
 \subsection{Language choice}
 Choice of language does matter: If the learning objectives of an
 introductory programming course are to learn problem solving concepts
 then a language with a simpler syntax is preferable to one with more
 complex syntax features\autocite{koulouri_teaching_2014}. The
-explanation for this can be found in CLT. If, for example, the goal is to
-teach problem-solving techniques, there will be cognitive load
+explanation for this can be found in CLT. If, for example, the goal is
+to teach problem-solving techniques, there will be cognitive load
 associated with thinking about different strategies one could
 use. Learning the syntax rules of a programming language adds to the
 cognitive load, but it does not aid in the process of learning
-problem-solving techniques. Thus, it is in the educator's best
-interest to minimize cognitive load associated with features that do
-not directly help with the learning objectives of the course and
-select a teaching language with easy-to-learn syntax.
+problem-solving techniques. In other words, learning the syntax of a
+programming language is an extraneous cognitive load in this
+context. Thus, it is in the educator's best interest to minimize
+cognitive load associated with features that do not directly help with
+the learning objectives of the course and select a teaching language
+with easy-to-learn syntax.
 
 In an attempt to address the concern that the two primary languages,
-C++ and Java, used to teach OOP in introductory courses, may be too
+C++ and Java, used to teach OOP in introductory courses may be too
 complex for novice students, \citeauthor{goldwasser_teaching_2008}
 select Python as a good choice for introductory programming claiming
 that its relatively simple syntax allow new students to better engage
@@ -512,24 +573,26 @@ the language\autocite{goldwasser_teaching_2008}.
 
 \subsubsection{Iconic versus textual languages}
 
-In theory a iconic programming environment such as
+In theory an iconic programming environment such as
 Scratch\autocite{resnick_scratch_2009} or
 Alice\autocite{cooper_using_2003} should aid in the learning of higher
-level concepts since it eliminates the extraneous cognitive load of
-dealing with syntax and grammar of a language. In fact, there has been
-success in using iconic languages to teach first year programming
+level concepts, such as those associated with OOP, since graphical
+languages eliminates the extraneous cognitive load of dealing with
+syntax and grammar of a language. In fact, there has been success in
+using iconic languages to teach first year programming
 \autocite{calloni_iconic_1997}, and research indicates that teaching
 graphical programming first does not inhibit a student from later
-learning textual programming languages\autocite{hundhausen_can_2009}.
+transferring learned high level concepts to textual programming
+languages\autocite{hundhausen_can_2009}.
 
 \citeauthor{snook_incorporation_2005} describe efforts to use the Alice
-programing environment to teach introductory programming
+programming environment to teach introductory programming
 concepts\autocite{snook_incorporation_2005}. Interestingly a later
-report assessing the efficacy of the curriculum which included this
-use of Alice indicated that while pre-post testing indicated learning
-gains with Alice, focus group data indicated a dissatisfaction with
-Alice as an introductory language which was later replaced with
-LabVIEW\autocite{lohani_reformulating_2011}.
+report assessing the efficacy of the curriculum using Alice indicated
+that while pre-post testing indicated learning gains with the
+environment, focus group data indicated a dissatisfaction with Alice
+as an introductory language resulting in a switch to
+LabVIEW\autocite{lohani_reformulating_2011}. 
 
 \subsection{Problem solving}
 Developing problem solving was widely regarded as a common objective
@@ -548,16 +611,16 @@ separate two tasks that we know individually demand a high level of
 cognitive load for novices: learning problem-solving strategies, and
 learning programming techniques.
 
-\section{Choice of problems to assign}
-%% Reviewer: short
-As previously noted, OOP provides a set of tools that naturally lend
-themselves to solving certain types of problems but not others. An
-educator teaching OOP should carefully select problems and challenges
-that make sense to be solved with an OOP approach. Of course,
-providing illustrative examples of problems that are \emph{not} best
-solved with an OOP approach would be useful provided there is also
-time for discussion of \emph{why} OOP might not be suited for certain
-problems and brief mention of alternative approaches.
+% \section{Choice of problems to assign}
+% %% Reviewer: short
+% As previously noted, OOP provides a set of tools that naturally lend
+% themselves to solving certain types of problems but not others. An
+% educator teaching OOP should carefully select problems and challenges
+% that make sense to be solved with an OOP approach. Of course,
+% providing illustrative examples of problems that are \emph{not} best
+% solved with an OOP approach would be useful provided there is also
+% time for discussion of \emph{why} OOP might not be suited for certain
+% problems and brief mention of alternative approaches.
 
 \section{Assessment}
 %% Reviewer: short
@@ -621,6 +684,21 @@ fruitful area to investigate the use of teaching programming to aid in
 analogical reasoning and abstract
 thinking\autocite{bennedssen_abstraction_2008}.
 
+An area that has not been addressed in this paper but has strong
+connections is that of attention in
+cognition\autocite{simon_role_1986}. There are strong parallels
+between our limitations to focus our conscious attention at one or two
+tasks at a time, and the serial processing inherent in most computing
+and language design. Of particular interest is the move in hardware to
+increasingly parallel designs to keep pace with Moore's law. Our
+cognitive constraints of attention may suggest an inherent difficulty
+in thinking and reasoning about parallel processing that must be
+addressed if we want to prepare students for an environment that
+demands parallel-processing solutions to programming problems. These
+demands may shift focus to languages such as Erlang that are designed
+for high levels of concurrency as well as demand we adopt different
+metaphors for computing\autocite{stein_challenging_1999}.
+
 \section{Conclusion}
 
 Recognizing that introductory programming is a common component of
@@ -635,6 +713,36 @@ techniques, and assessments. Using such a framework well help identify
 components of a course that may be contributing unnecessarily to
 cognitive load, or reasons why student outcomes might not match
 expectations assumed from course objectives.
+
+Analyzing a proposed curriculum through the lens of cognitive load
+theory can aid in instruction decisions that will increase the chances
+achieving learning goals. Educators must critically review the goals
+of their introductory programming courses: if goals are to understand
+high level concepts such as OOP, but not necessarily implement these
+concepts in textual languages, it may be prudent to consider iconic
+languages for these courses. If however, goals include learning OOP
+concepts \emph{and} implementing these concepts in textual language,
+educators must be aware of the increased cognitive load associated
+with each of these tasks and provide scaffolding to help students
+automate aspects of each task individually before expecting them to
+combine them both in successful programs.
+
+Taken together, using an established framework, such as constructive
+alignment, to design an analyze curriculum, and utilizing cognitive
+load theory to help reduce extraneous cognitive load while being
+intentional about inclusion of germane cognitive load should help
+instructional designers create learning environments in which students
+are able to achieve learning goals. In some cases, intended goals may
+have to be adjusted to account for the finite limitations of working
+memory capacity: it is likely not feasible to expect students with no
+programming experience to learn the syntax and grammar of a new
+language \emph{and} higher level concepts associated with a paradigm
+like OOP, \emph{and} be able to switch between abstraction layers in
+the fluid manner necessary to solving complex problems with
+programs. What this suggests is that closer coordination is needed
+across courses in a curriculum so that goals of one become background
+knowledge of subsequent courses, resulting in successful achievement
+of program learning goals by the time of graduation.
 
 % \section{What are “the basics”}
 % Several papers discuss the relative merits of a more “modern” paradigm
@@ -748,46 +856,46 @@ expectations assumed from course objectives.
 % the popular OOP and reverts his CS1 course back to a procedural style
 % which allows him to put the emphasis back on problem solving.
 
-\section{Notes for Revisions}
+% \section{Notes for Revisions}
 
-If teaching OOP concepts is a goal of the course one must ask if
-\emph{implementation} of OOP programs is also a goal.  If writing OOP
-code is a goal and it is unreasonable to assume that students will
-have already mastered syntax and enough understanding of the
-development environment (interpreting compiler messages, debugging,
-etc) then CLT would suggest that extensive \emph{scaffolding} be
-employed to reduce extraneous cognitive load. Being careful to
-sequence simple-to-complex concepts will help reduce /intrinsic/
-cognitive load: i.e. teach bare objects and make sure students have
-began to automate tasks associated with implementing bare objects
-before introducing inheritance.
+% If teaching OOP concepts is a goal of the course one must ask if
+% \emph{implementation} of OOP programs is also a goal.  If writing OOP
+% code is a goal and it is unreasonable to assume that students will
+% have already mastered syntax and enough understanding of the
+% development environment (interpreting compiler messages, debugging,
+% etc) then CLT would suggest that extensive \emph{scaffolding} be
+% employed to reduce extraneous cognitive load. Being careful to
+% sequence simple-to-complex concepts will help reduce \emph{intrinsic}
+% cognitive load: i.e. teach bare objects and make sure students have
+% began to automate tasks associated with implementing bare objects
+% before introducing inheritance.
 
-Keep in mind that providing scaffolding for syntax and grammar,
-e.g. in the form of worked examples, or implementation in which
-students need to copy/paste implementation code into object template
-code may help with teaching OOP concepts, but would not be aiding
-learning of actually implementing OOP code from scratch. Simply seeing
-the implemented code is likely not enough to aid most students in
-learning this skill themselves and if that is a goal of the course, or
-a subsequent course it is important to focus on that while scaffolding
-other aspects (e.g. providing an object interface and description of
-how the object is intended to function, ask students to write
-implementation). The main challenge with implementing such an
-instructional strategy is that it will likely require coordination
-across courses and instructors as teaching both programming, OOP,
-debugging strategies all at once will likely not be met with much
-success. A possible exception might be if one considers a spiral
-curriculum, but the success of this still depends on close
-coordination across courses and instructors.
+% Keep in mind that providing scaffolding for syntax and grammar,
+% e.g. in the form of worked examples, or implementation in which
+% students need to copy/paste implementation code into object template
+% code may help with teaching OOP concepts, but would not be aiding
+% learning of actually implementing OOP code from scratch. Simply seeing
+% the implemented code is likely not enough to aid most students in
+% learning this skill themselves and if that is a goal of the course, or
+% a subsequent course it is important to focus on that while scaffolding
+% other aspects (e.g. providing an object interface and description of
+% how the object is intended to function, ask students to write
+% implementation). The main challenge with implementing such an
+% instructional strategy is that it will likely require coordination
+% across courses and instructors as teaching both programming, OOP,
+% debugging strategies all at once will likely not be met with much
+% success. A possible exception might be if one considers a spiral
+% curriculum, but the success of this still depends on close
+% coordination across courses and instructors.
 
-Eric Raymond describes three different kinds of complexity in software
-design: essential complexity, optional complexity, and accidental
-complexity. This has interesting parallels to the different types of
-cognitive load in CLT. In particular the notion of \emph{essential
-  complexity}, like \emph{intrinsic} cognitive load is associated with
-the the solution itself: a solution to a complex problem will be
-essentially complex due to the complexity associated with the problem
-itself.
+% Eric Raymond describes three different kinds of complexity in software
+% design: essential complexity, optional complexity, and accidental
+% complexity. This has interesting parallels to the different types of
+% cognitive load in CLT. In particular the notion of \emph{essential
+%   complexity}, like \emph{intrinsic} cognitive load is associated with
+% the the solution itself: a solution to a complex problem will be
+% essentially complex due to the complexity associated with the problem
+% itself.
 
 \vspace{4\baselineskip}\vspace{-\parskip} % Creaters proper 4 blank line spacing.
 
